@@ -11,6 +11,12 @@ clean:
 	@rm -f *.log
 	@rm -f .env.bkp*
 
+build-venv:
+	python3.12 -m venv venv
+
+requirements-dev:
+	venv/bin/pip install -r requirements/develop.txt
+
 run-another:
 	python another_main.py
 

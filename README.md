@@ -417,3 +417,26 @@ Após a execução, o SonarScanner enviará a análise e o relatório de cobertu
 ## Conclusão ✨
 
 Aprender sobre testes e incorporá-los ao seu fluxo de trabalho é um passo crucial na sua jornada como desenvolvedor Python. Comece com testes unitários simples, explore diferentes tipos de testes e experimente as abordagens TDD e BDD. Lembre-se: testes não são um custo adicional, mas um investimento na qualidade e na sustentabilidade do seu software. Bons testes! 🚀
+
+## Projeto local
+
+Seguem instruções rápidas:
+
+```shell
+# Instalando o ambiente virtual
+make build-venv
+# Iniciando o venv
+source venv/bin/activate
+# Instalando os pacotes locais
+make requirements-dev
+
+# Testes locais
+make test
+
+# Cobertura
+make coverage
+
+# Sonar
+export SONAR_TOKEN=<informeseutoken>
+pysonar-scanner -Dsonar.projectVersion=$(date '+%Y%m%d-%H%M%S')
+```

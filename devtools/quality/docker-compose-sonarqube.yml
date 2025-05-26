@@ -1,0 +1,29 @@
+services:
+  sonarqube-test:
+    image: sonarqube:lts-community
+    container_name: sonarqube-test
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_JDBC_USERNAME=sonar
+      - SONAR_JDBC_PASSWORD=sonar
+      - SONAR_JDBC_URL=jdbc:postgresql://sonarqube-db-test:5432/sonar
+    depends_on:
+      - sonarqube-db-test
+    restart: unless-stopped
+
+  sonarqube-db-test:
+    image: postgres:13
+    container_name: sonarqube-db-test
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=sonar
+      - POSTGRES_PASSWORD=sonar
+    restart: unless-stopped
+
+
+# Instrução para subir o sonar
+# docker-compose -f ./devtools/docker-compose-sonar.yml up
+
+# 
