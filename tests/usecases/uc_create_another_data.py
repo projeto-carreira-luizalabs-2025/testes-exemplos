@@ -19,3 +19,4 @@ def test_should_create_something_():
     # Execução do teste (Exemplo: Chama uma ou mais apis)
     # Validação dos dados (Valida bancos e/ou outros sistemas que são carregado
     # com este ambiente/sistema)
+    ...
